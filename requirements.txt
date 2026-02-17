@@ -1,0 +1,10 @@
+# Зависимости для версии с ReportLab (рекомендуется, особенно для Windows)
+reportlab>=4.0.7
+
+# Зависимости для версии с Jinja2 + WeasyPrint
+# ВНИМАНИЕ: WeasyPrint на Windows требует установки GTK+ библиотек,
+# что может быть сложно. Рекомендуется использовать версию с ReportLab.
+# jinja2==3.1.2
+# weasyprint==60.1
+# cffi
+# cairocffi

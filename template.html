@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чек</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .item:hover {
+            background-color: #f5f5f5;
+        }
+        .product-name {
+            flex: 2;
+            font-weight: bold;
+        }
+        .price, .qty, .total {
+            flex: 1;
+            text-align: right;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding-top: 20px;
+            border-top: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Чек покупки</h1>
+        <p>Дата: {{ date }}</p>
+    </div>
+    
+    <div class="items">
+        {% for item in items %}
+        <div class="item">
+            <div class="product-name">{{ item.product }}</div>
+            <div class="price">{{ item.price }} ₽</div>
+            <div class="qty">× {{ item.qty }}</div>
+            <div class="total">{{ item.total }} ₽</div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="footer">
+        Итого: {{ grand_total }} ₽
+    </div>
+</body>
+</html>
